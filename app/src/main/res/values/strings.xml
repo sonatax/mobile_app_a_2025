@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MobileAppA</string>
+    <string name="text">hoge</string>
 </resources>
