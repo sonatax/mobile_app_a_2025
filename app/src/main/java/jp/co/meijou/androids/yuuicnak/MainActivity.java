@@ -16,6 +16,7 @@ import jp.co.meijou.androids.yuuicnak.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private PrefDataStore prefDataStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        prefDataStore = PrefDataStore.getInstance(this);
+        binding.button2.setOnClickListener(view -> {
+            var text = binding.editTextText.getText().toString();
+            prefDataStore.setString("input", text);
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        prefDataStore.getString("input").ifPresent(input -> binding.editTextText.setText(input));
     }
 }
