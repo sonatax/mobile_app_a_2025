@@ -73,4 +73,25 @@
         app:layout_constraintTop_toTopOf="@id/editTextText2"
         app:layout_constraintStart_toEndOf="@id/editTextText2"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result: "
+        android:textSize="24sp"
+        android:layout_margin="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_exec"
+        app:layout_constraintTop_toBottomOf="@id/editTextText2" />
+
+    <Button
+        android:id="@+id/buttonexec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="起動"
+        app:layout_constraintTop_toTopOf="@+id/textview_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textview_result" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
